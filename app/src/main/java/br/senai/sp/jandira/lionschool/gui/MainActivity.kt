@@ -1,10 +1,12 @@
 package br.senai.sp.jandira.lionschool.gui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -17,6 +19,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -45,7 +48,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-
+    val context = LocalContext.current
     var results by remember {
         mutableStateOf(listOf<br.senai.sp.jandira.lionschool.model.Course>())
     }
@@ -54,11 +57,11 @@ fun Greeting(name: String) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(255,255,255))
+            .background(Color(255, 255, 255))
     ) {
         Column(
             modifier = Modifier
-                .background(Color(0,0,0))
+                .background(Color(0, 0, 0))
         ) {
 
 
@@ -136,28 +139,28 @@ fun Greeting(name: String) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-            .background(Color(255,255,255))
+                .background(Color(255, 255, 255))
 
         )
 
-         {
-             Image(
-                 painter = painterResource(id = br.senai.sp.jandira.lionschool.R.drawable.ds),
-                 contentDescription = null,
-                 modifier = Modifier
-                     .fillMaxWidth()
-                     .width(150.dp)
-                     .height(150.dp)
-                     .padding(start = 0.dp)
-             )
-
-
+        {
+            Image(
+                painter = painterResource(id = br.senai.sp.jandira.lionschool.R.drawable.ds),
+                contentDescription = null,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .width(150.dp)
+                    .height(150.dp)
+                    .padding(start = 0.dp) .clickable {
+                        val intent = Intent(context, TurmaActivity::class.java)
+                        context.startActivity(intent)
+                    },
+            )
 
 
         }
         Column(
             modifier = Modifier
-
 
 
         ) {
@@ -175,8 +178,6 @@ fun Greeting(name: String) {
 
 
         }
-
-
 
 
     }
