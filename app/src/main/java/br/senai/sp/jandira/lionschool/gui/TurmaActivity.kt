@@ -33,7 +33,7 @@ class TurmaActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+
                 ) {
                     Greeting2("Android")
                 }
@@ -48,22 +48,39 @@ fun Greeting2(name: String) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(51, 71, 176))
+            .background(Color(176, 196, 222))
+
 
     ) {
 
-        Spacer(modifier = Modifier.height(30.dp))
-
-        Row(
+        Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 30.dp),
-                horizontalArrangement = Arrangement.SpaceBetween
-        ) {
+                .width(500.dp)
+                .background(Color(0,0,0)),
+
+
+
+
+
+        )
+
+      { Row(
+          modifier = Modifier
+              .fillMaxWidth()
+              .absolutePadding(200.dp)
+
+
+
+      ) {
+          Image(
+              painter = painterResource(id = R.drawable.lionschol), contentDescription = null
+          )
+
+      }
 
             Button(
                 onClick = { /*TODO*/ },
-                colors = ButtonDefaults.buttonColors(Color(51, 71, 176))
+
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.voltar),
@@ -71,17 +88,11 @@ fun Greeting2(name: String) {
                 )
             }
 
-            Text(
-                text = "Turma",
-                fontSize = 40.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.White
-            )
 
-            Image(
-                painter = painterResource(id = R.drawable.logo_image), contentDescription = null
-            )
+
         }
+
+
 
         Spacer(modifier = Modifier.height(35.dp))
 
@@ -91,13 +102,7 @@ fun Greeting2(name: String) {
                 .padding(horizontal = 18.dp)
         ) {
 
-            Text(
-                text = "Desenvolvimento de Sistemas",
-                fontSize = 42.sp,
-                color = Color.White,
-                textAlign = TextAlign.Center,
-                fontWeight = FontWeight.Bold
-            )
+
         }
 
         Spacer(modifier = Modifier.height(35.dp))
@@ -105,7 +110,7 @@ fun Greeting2(name: String) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 18.dp)
+                .padding(vertical = 18.dp)
             , horizontalArrangement = Arrangement.SpaceBetween
         ) {
 
@@ -113,13 +118,17 @@ fun Greeting2(name: String) {
                 modifier = Modifier
                     .height(25.dp)
                     .width(85.dp),
-                shape = CircleShape
+                shape = CircleShape,
+
+
             ) {
                 Text(
                     text = "Todos",
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
+                    color = Color(0,0,0)
+
                 )
             }
 
@@ -127,13 +136,15 @@ fun Greeting2(name: String) {
                 modifier = Modifier
                     .height(25.dp)
                     .width(85.dp),
-                shape = CircleShape
+                shape = CircleShape,
+                backgroundColor = Color(229, 182, 87)
             ) {
                 Text(
                     text = "Cursando",
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center
+
                 )
             }
 
@@ -141,13 +152,15 @@ fun Greeting2(name: String) {
                 modifier = Modifier
                     .height(25.dp)
                     .width(85.dp),
-                shape = CircleShape
+                shape = CircleShape,
+              backgroundColor = Color(16,	130,	190)
             ) {
                 Text(
                     text = "Finalizados",
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center
+
                 )
             }
 
@@ -161,7 +174,7 @@ fun Greeting2(name: String) {
                     .height(140.dp)
                     .padding(horizontal = 35.dp),
                     shape = RoundedCornerShape(topStart = 30.dp, topEnd = 30.dp, bottomStart = 30.dp, bottomEnd = 30.dp),
-                    backgroundColor = Color.White,
+                    backgroundColor = Color(229, 182, 87),
                     border = BorderStroke (3.dp, Color.Black)
             ) {
                 Row(
@@ -169,7 +182,8 @@ fun Greeting2(name: String) {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Card(
-                        shape = CircleShape
+                        shape = CircleShape,
+                        backgroundColor = Color(255,255,0)
                     ) {
                         Image(
                             painter = painterResource(id = R.drawable.aluno),

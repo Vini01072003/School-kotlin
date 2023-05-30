@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -49,39 +50,69 @@ fun Greeting(name: String) {
         mutableStateOf(listOf<br.senai.sp.jandira.lionschool.model.Course>())
     }
 
+
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(51, 71, 176))
+            .background(Color(255,255,255))
     ) {
-
-        Row(
+        Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 30.dp),
-            horizontalArrangement = Arrangement.Center
-
+                .background(Color(0,0,0))
         ) {
-            Text(
-                text = stringResource(id = br.senai.sp.jandira.lionschool.R.string.app_name),
-                fontSize = 50.sp,
-                color = Color.White,
-                fontWeight = FontWeight.Bold,
-            )
+
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 30.dp),
+                horizontalArrangement = Arrangement.Center
+
+            ) {
+                Text(
+                    text = stringResource(id = br.senai.sp.jandira.lionschool.R.string.app_name),
+                    fontSize = 50.sp,
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold,
+                )
+
+
+            }
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 30.dp),
+                horizontalArrangement = Arrangement.Center
+
+
+            ) {
+                Text(
+                    text = "Escolha um curso para gerenciar",
+                    fontSize = 20.sp,
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
+
+                    )
+
+            }
+
+
+            Spacer(modifier = Modifier.height(height = 35.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Image(
+                    painter = painterResource(id = br.senai.sp.jandira.lionschool.R.drawable.lionschol),
+                    contentDescription = null,
+                    modifier = Modifier.size(170.dp)
+                )
+            }
         }
 
-        Spacer(modifier = Modifier.height(height = 35.dp))
-
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
-        ) {
-            Image(
-                painter = painterResource(id = br.senai.sp.jandira.lionschool.R.drawable.logo_image),
-                contentDescription = null,
-                modifier = Modifier.size(170.dp)
-            )
-        }
 
         Spacer(modifier = Modifier.height(height = 35.dp))
 
@@ -102,30 +133,50 @@ fun Greeting(name: String) {
         Spacer(modifier = Modifier.height(height = 35.dp))
 
 
-
-        Card(
+        Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .height(172.dp)
-                .padding(horizontal = 30.dp),
-                shape = RoundedCornerShape(topStart = 30.dp, topEnd = 30.dp, bottomStart = 30.dp, bottomEnd = 30.dp,),
-                backgroundColor = Color.Red
-        ) {
+                .fillMaxSize()
+            .background(Color(255,255,255))
 
-            Row(
-                modifier = Modifier.padding(start = 20.dp)
+        )
+
+         {
+             Image(
+                 painter = painterResource(id = br.senai.sp.jandira.lionschool.R.drawable.ds),
+                 contentDescription = null,
+                 modifier = Modifier
+                     .fillMaxWidth()
+                     .width(150.dp)
+                     .height(150.dp)
+                     .padding(start = 0.dp)
+             )
 
 
-            ) {
-                Text(
-                    text = "RDS",
-                    fontSize = 50.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.White
-                )
 
-            }
+
         }
+        Column(
+            modifier = Modifier
+
+
+
+        ) {
+            Image(
+                painter = painterResource(id = br.senai.sp.jandira.lionschool.R.drawable.rds),
+                contentDescription = null,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .width(100.dp)
+                    .height(100.dp)
+                    .padding(start = 0.dp)
+
+
+            )
+
+
+        }
+
+
 
 
     }
