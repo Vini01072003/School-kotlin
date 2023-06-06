@@ -114,6 +114,29 @@ fun Greeting(name: String) {
                     modifier = Modifier.size(170.dp)
                 )
             }
+
+
+        }
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxWidth()
+
+
+        ) {
+            Image(
+                painter = painterResource(id = br.senai.sp.jandira.lionschool.R.drawable.rds),
+                contentDescription = null,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .width(100.dp)
+                    .clickable {
+                        val intent = Intent(context, TurmaActivity::class.java)
+                        context.startActivity(intent)
+                    }
+                    .height(100.dp))
+
         }
 
 
@@ -149,13 +172,24 @@ fun Greeting(name: String) {
                 contentDescription = null,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .width(150.dp)
-                    .height(150.dp)
-                    .padding(start = 0.dp) .clickable {
+                    .width(100.dp)
+                    .height(100.dp)
+                    .padding(start = 0.dp)
+                    .clickable {
                         val intent = Intent(context, TurmaActivity::class.java)
                         context.startActivity(intent)
                     },
+
+
+
+
+
+
             )
+
+
+
+
 
 
         }

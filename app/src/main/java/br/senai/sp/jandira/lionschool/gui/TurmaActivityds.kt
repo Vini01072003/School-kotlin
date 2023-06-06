@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.sp
 import br.senai.sp.jandira.lionschool.R
 import br.senai.sp.jandira.lionschool.ui.theme.LionSchoolTheme
 
-class TurmaActivity : ComponentActivity() {
+class TurmaActivityds : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -34,8 +34,8 @@ class TurmaActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
 
-                ) {
-                    Greeting2("Android")
+                    ) {
+                    Greeting3("Android")
                 }
             }
         }
@@ -43,7 +43,7 @@ class TurmaActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting2(name: String) {
+fun Greeting3(name: String) {
 
     Column(
         modifier = Modifier
@@ -62,28 +62,28 @@ fun Greeting2(name: String) {
 
 
 
-        )
+            )
 
-      { Row(
-          modifier = Modifier
-              .fillMaxWidth()
-              .absolutePadding(200.dp)
+        { Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .absolutePadding(200.dp)
 
 
 
-      ) {
-          Image(
-              painter = painterResource(id = R.drawable.lionschol), contentDescription = null
-          )
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.lionschol), contentDescription = null
+            )
 
-      }
+        }
 
 
 
             Button(
                 onClick = { /*TODO*/ },
 
-            ) {
+                ) {
                 Image(
                     painter = painterResource(id = R.drawable.voltar),
                     contentDescription = null
@@ -123,7 +123,7 @@ fun Greeting2(name: String) {
                 shape = CircleShape,
 
 
-            ) {
+                ) {
                 Text(
                     text = "Todos",
                     fontSize = 15.sp,
@@ -155,7 +155,7 @@ fun Greeting2(name: String) {
                     .height(25.dp)
                     .width(85.dp),
                 shape = CircleShape,
-              backgroundColor = Color(16,	130,	190)
+                backgroundColor = Color(16,	130,	190)
             ) {
                 Text(
                     text = "Finalizados",
@@ -170,65 +170,65 @@ fun Greeting2(name: String) {
 
         Spacer(modifier = Modifier.height(55.dp))
 
-            Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(140.dp)
-                    .padding(horizontal = 35.dp),
-                    shape = RoundedCornerShape(topStart = 30.dp, topEnd = 30.dp, bottomStart = 30.dp, bottomEnd = 30.dp),
-                    backgroundColor = Color(229, 182, 87),
-                    border = BorderStroke (3.dp, Color.Black)
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(140.dp)
+                .padding(horizontal = 35.dp),
+            shape = RoundedCornerShape(topStart = 30.dp, topEnd = 30.dp, bottomStart = 30.dp, bottomEnd = 30.dp),
+            backgroundColor = Color(16, 130, 190),
+            border = BorderStroke (3.dp, Color.Black)
+        ) {
+            Row(
+                modifier = Modifier.padding(horizontal = 30.dp),
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Row(
-                    modifier = Modifier.padding(horizontal = 30.dp),
-                    verticalAlignment = Alignment.CenterVertically
+                Card(
+                    shape = CircleShape,
+                    backgroundColor = Color(16,130,190)
                 ) {
-                    Card(
-                        shape = CircleShape,
-                        backgroundColor = Color(255,255,0)
-                    ) {
-                        Image(
-                            painter = painterResource(id = R.drawable.aluno),
-                            contentDescription = null,
-                            modifier = Modifier.size(100.dp)
+                    Image(
+                        painter = painterResource(id = R.drawable.aluno),
+                        contentDescription = null,
+                        modifier = Modifier.size(100.dp)
 
-                        )
-                    }
+                    )
+                }
 
-                    Column(
-                        modifier = Modifier.fillMaxHeight().
-                            fillMaxWidth()
-                            .padding(vertical = 20.dp, horizontal = 20.dp),
-                        verticalArrangement = Arrangement.SpaceBetween,
+                Column(
+                    modifier = Modifier.fillMaxHeight().
+                    fillMaxWidth()
+                        .padding(vertical = 20.dp, horizontal = 20.dp),
+                    verticalArrangement = Arrangement.SpaceBetween,
 
                     ) {
 
-                        Text(
-                            modifier = Modifier.fillMaxWidth(),
-                            text = "José Matheus da Silva Miranda",
-                            fontSize = 16.sp,
-                            fontWeight = FontWeight.Bold,
-                            color = Color.Black,
-                            textAlign = TextAlign.Center
+                    Text(
+                        modifier = Modifier.fillMaxWidth(),
+                        text = "Luis Oliveira",
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.Black,
+                        textAlign = TextAlign.Center
 
-                        )
+                    )
 
-                        Text(
-                            modifier = Modifier.fillMaxWidth(),
-                            text = "Cursando",
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 18.sp,
-                            color = Color.Black,
-                            textAlign = TextAlign.Center
-                        )
+                    Text(
+                        modifier = Modifier.fillMaxWidth(),
+                        text = "Finalizado",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 18.sp,
+                        color = Color.Black,
+                        textAlign = TextAlign.Center
+                    )
 
-
-                    }
 
                 }
 
-
             }
+
+
+        }
 
 
 
@@ -238,8 +238,8 @@ fun Greeting2(name: String) {
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun DefaultPreview2() {
+fun DefaultPreview3() {
     LionSchoolTheme {
-        Greeting2("Android")
+        Greeting3("Android")
     }
 }
